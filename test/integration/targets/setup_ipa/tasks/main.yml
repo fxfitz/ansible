@@ -1,0 +1,9 @@
+---
+# This integration test is only for Ubuntu 16.04 at the moment. This makes
+# installation of a FreeIPA quite a bit easier.
+#
+# Ideally at some point in the future we can utilize a FreeIPA Server container
+# as a remote service, and then execute the tests against that. But for now,
+# this will do.
+- include: setup.yml
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'
